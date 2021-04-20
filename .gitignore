@@ -1,0 +1,32 @@
+
+##################
+# Common ignores
+##################
+
+\.diff$
+\.orig$
+\.orig\..*$
+\.chg\..*$
+\.rej$
+\.conflict\~$
+
+
+##################
+# IDE specific
+##################
+
+target/
+nbproject/
+nb-configuration.xml
+.idea/
+*.iml
+
+
+##################
+# OS specific
+##################
+
+thumb.db
+Thumbs.db
+.DS_Store
+._.DS_Store
