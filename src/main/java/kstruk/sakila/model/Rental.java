@@ -14,7 +14,7 @@ public class Rental {
 
     private Integer inventoryId;
 
-    private LocalDateTime rental_date;
+    private LocalDateTime rentalDate;
 
     private LocalDateTime returnDate;
 

@@ -10,7 +10,7 @@ public class Customer {
 
     private Integer addressId;
 
-    private Integer store_id;
+    private Integer storeId;
 
     private String firstName;
 
