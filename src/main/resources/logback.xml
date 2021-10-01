@@ -8,6 +8,7 @@
 
     <logger name="kstruk.sakila" level="info"/>
     <logger name="ch.qos.logback" level="error"/>
+    <logger name="org.jooq.Constants" level="warning"/>
 
     <root level="error">
         <appender-ref ref="console"/>
