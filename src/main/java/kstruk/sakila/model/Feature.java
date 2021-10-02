@@ -1,10 +1,15 @@
 package kstruk.sakila.model;
 
-public enum Feature {
+import java.time.LocalDateTime;
+import lombok.Data;
 
-    TRAILERS,
-    COMMENTARIES,
-    DELETED_SCENES,
-    BEHIND_THE_SCENES;
+@Data
+public class Feature {
+
+    private Integer id;
+
+    private String name;
+
+    private LocalDateTime lastUpdate;
 
 }
