@@ -12,6 +12,7 @@ public class FlyWayMigrateIT {
             .dataSource(DataSourceHolder.get())
             .locations("classpath:kstruk/sakila/migration")
             .load();
+
         flyway.migrate();
     }
 

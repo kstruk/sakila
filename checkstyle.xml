@@ -56,7 +56,7 @@
         <module name="ParameterName"/>
         <module name="StaticVariableName"/>
         <module name="TypeName">
-            <property name="format" value="^[UVR]?[0-9]*(__)?[a-zA-Z0-9]*$"/>
+            <property name="format" value="^[UVR]?[0-9_]*(__)?[a-zA-Z0-9]*$"/>
         </module>
 
         <!-- See https://checkstyle.org/config_import.html -->

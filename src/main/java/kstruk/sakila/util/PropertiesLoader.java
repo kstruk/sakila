@@ -1,12 +1,9 @@
 package kstruk.sakila.util;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.UncheckedIOException;
-import java.net.URL;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.Optional;
 import java.util.Properties;
 import lombok.RequiredArgsConstructor;
 
@@ -22,22 +19,16 @@ public class PropertiesLoader {
     public Map<String, Object> load() {
         var resource = Thread.currentThread()
             .getContextClassLoader()
-            .getResource(path);
-
-        var propertiesPath = Optional.ofNullable(resource)
-            .map(URL::getPath)
-            .orElseThrow(() -> new IllegalStateException(String.format(
-                "Missing properties resource: %s", path
-            )));
+            .getResourceAsStream(path);
 
         var appProps = new Properties();
         try {
-            appProps.load(new FileInputStream(propertiesPath));
+            appProps.load(resource);
         } catch (IOException ex) {
             throw new UncheckedIOException(ex);
         }
 
-        var result = new HashMap<String, Object>();
+        var result = new LinkedHashMap<String, Object>();
         appProps.forEach((key, value) -> result.put((String) key, value));
 
         return result;

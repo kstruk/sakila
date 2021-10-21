@@ -1,12 +1,21 @@
 package kstruk.sakila.util;
 
 import java.util.Map;
+import java.util.TreeMap;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 public class Properties {
 
     private final Map<String, Object> values;
+
+    public String getAppName() {
+        return (String) values.get("app.name");
+    }
+
+    public String getAppVersion() {
+        return (String) values.get("app.version");
+    }
 
     public String getDataBaseVendor() {
         return (String) values.get("database.vendor");
@@ -26,6 +35,10 @@ public class Properties {
 
     public String getDataBasePass() {
         return (String) values.get("database.pass");
+    }
+
+    public Map<String, Object> toMap() {
+        return new TreeMap<>(values);
     }
 
 }

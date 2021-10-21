@@ -28,7 +28,7 @@ public class Film {
 
     private Double replacementCost;
 
-    private Rating rating;
+    private Integer ratingId;
 
     private Set<Feature> specialFeatures;
 
