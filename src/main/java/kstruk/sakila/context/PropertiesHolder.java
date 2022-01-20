@@ -1,6 +1,8 @@
-package kstruk.sakila.util;
+package kstruk.sakila.context;
 
 import java.util.concurrent.atomic.AtomicReference;
+import kstruk.sakila.util.Properties;
+import kstruk.sakila.util.PropertiesLoader;
 
 public class PropertiesHolder {
 
@@ -14,10 +16,6 @@ public class PropertiesHolder {
 
     public static Properties get() {
         return CURRENT.get();
-    }
-
-    public static void set(Properties properties) {
-        CURRENT.set(properties);
     }
 
 }

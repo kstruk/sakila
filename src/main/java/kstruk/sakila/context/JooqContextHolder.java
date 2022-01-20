@@ -1,8 +1,7 @@
-package kstruk.sakila.dao;
+package kstruk.sakila.context;
 
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicReference;
-import kstruk.sakila.util.PropertiesHolder;
 import org.jooq.DSLContext;
 import org.jooq.SQLDialect;
 import org.jooq.conf.Settings;
@@ -35,10 +34,6 @@ public class JooqContextHolder {
 
     public static DSLContext get() {
         return CURRENT.get();
-    }
-
-    public void set(DSLContext context) {
-        CURRENT.set(context);
     }
 
     private static SQLDialect getDialect(String dialect) {

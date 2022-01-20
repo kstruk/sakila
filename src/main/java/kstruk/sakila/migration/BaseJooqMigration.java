@@ -1,7 +1,7 @@
 package kstruk.sakila.migration;
 
 import java.sql.Statement;
-import kstruk.sakila.dao.JooqContextHolder;
+import kstruk.sakila.context.JooqContextHolder;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;

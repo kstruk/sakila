@@ -1,4 +1,4 @@
-package kstruk.sakila.dao;
+package kstruk.sakila.context;
 
 import com.mysql.cj.jdbc.MysqlConnectionPoolDataSource;
 import java.util.HashMap;
@@ -7,7 +7,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import javax.sql.DataSource;
 import kstruk.sakila.util.Properties;
-import kstruk.sakila.util.PropertiesHolder;
 import org.h2.jdbcx.JdbcDataSource;
 
 public class DataSourceHolder {
@@ -31,10 +30,6 @@ public class DataSourceHolder {
 
     public static DataSource get() {
         return CURRENT.get();
-    }
-
-    public static void set(DataSource dataSource) {
-        CURRENT.set(dataSource);
     }
 
     private static DataSource createMysqlDataSource(Properties properties) {

@@ -20,7 +20,7 @@ nbproject/
 nb-configuration.xml
 .idea/
 *.iml
-
+dependency-reduced-pom.xml
 
 ##################
 # OS specific

@@ -10,7 +10,7 @@ public class Store {
 
     private Integer addressId;
 
-    private Integer managerStuffId;
+    private Integer managerId;
 
     private LocalDateTime lastUpdate;
 
