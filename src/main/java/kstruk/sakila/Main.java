@@ -22,8 +22,6 @@ import static java.util.stream.Collectors.toCollection;
 @Slf4j
 public class Main {
 
-    private static final Gson gson = GsonHolder.get();
-
     public static void main(String[] args) {
         var properties = PropertiesHolder.get();
         logStartup(properties);
@@ -54,6 +52,8 @@ public class Main {
                 Map.Entry::getKey,
                 Map.Entry::getValue
             ));
+
+        Gson gson = GsonHolder.get();
         return ": " + gson.toJson(filteredProps);
     }
 
