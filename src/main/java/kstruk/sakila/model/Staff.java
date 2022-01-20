@@ -4,7 +4,7 @@ import java.time.LocalDateTime;
 import lombok.Data;
 
 @Data
-public class Stuff {
+public class Staff {
 
     private Integer id;
 
@@ -12,19 +12,17 @@ public class Stuff {
 
     private Integer storeId;
 
+    private String username;
+
+    private String password;
+
     private String firstName;
 
     private String lastName;
 
-    private byte[] picture;
-
     private String email;
 
     private Boolean active;
-
-    private String username;
-
-    private String password;
 
     private LocalDateTime lastUpdate;
 

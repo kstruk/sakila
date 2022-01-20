@@ -1,11 +1,15 @@
 package kstruk.sakila.model;
 
-public enum Rating {
+import java.time.LocalDateTime;
+import lombok.Data;
 
-    G,
-    PG,
-    PG_13,
-    R,
-    NC_17;
+@Data
+public class Rating {
+
+    private Integer id;
+
+    private String name;
+
+    private LocalDateTime lastUpdate;
 
 }

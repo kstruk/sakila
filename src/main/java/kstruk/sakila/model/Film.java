@@ -1,8 +1,7 @@
 package kstruk.sakila.model;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
-import java.time.Year;
-import java.util.Set;
 import lombok.Data;
 
 @Data
@@ -14,23 +13,21 @@ public class Film {
 
     private Integer originalLanguageId;
 
+    private Integer ratingId;
+
     private String title;
 
     private String description;
 
-    private Year releaseYear;
-
-    private Integer rentalDuration;
-
-    private Double rentalRate;
+    private Integer releaseYear;
 
     private Integer length;
 
-    private Double replacementCost;
+    private Integer rentalDuration;
 
-    private Rating rating;
+    private BigDecimal rentalRate;
 
-    private Set<Feature> specialFeatures;
+    private BigDecimal replacementCost;
 
     private LocalDateTime lastUpdate;
 
