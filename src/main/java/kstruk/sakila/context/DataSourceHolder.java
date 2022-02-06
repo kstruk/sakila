@@ -7,8 +7,11 @@ import java.util.concurrent.atomic.AtomicReference;
 import java.util.function.Function;
 import javax.sql.DataSource;
 import kstruk.sakila.util.Properties;
+import kstruk.sakila.util.Util;
+import lombok.extern.slf4j.Slf4j;
 import org.h2.jdbcx.JdbcDataSource;
 
+@Slf4j
 public class DataSourceHolder {
 
     private static final AtomicReference<DataSource> CURRENT;
@@ -32,7 +35,16 @@ public class DataSourceHolder {
         return CURRENT.get();
     }
 
-    private static DataSource createMysqlDataSource(Properties properties) {
+    public static void set(DataSource oldValue, DataSource newValue) {
+        var currentValue = CURRENT.compareAndExchange(oldValue, newValue);
+
+        log.info(
+            "Changing data source: from {} to {}",
+            Util.toString(currentValue),
+            Util.toString(newValue));
+    }
+
+    public static DataSource createMysqlDataSource(Properties properties) {
         var dataSource = new MysqlConnectionPoolDataSource();
         dataSource.setUrl(properties.getDataBaseUrl());
         dataSource.setUser(properties.getDataBaseUser());
@@ -40,7 +52,7 @@ public class DataSourceHolder {
         return dataSource;
     }
 
-    private static DataSource createH2DataSource(Properties properties) {
+    public static DataSource createH2DataSource(Properties properties) {
         var dataSource = new JdbcDataSource();
         dataSource.setUrl(properties.getDataBaseUrl());
         dataSource.setUser(properties.getDataBaseUser());
