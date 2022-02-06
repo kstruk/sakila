@@ -10,7 +10,7 @@ import static org.jooq.impl.SQLDataType.INTEGER;
 import static org.jooq.impl.SQLDataType.LOCALDATETIME;
 
 @Slf4j
-public class V0_1_1019_CreateTableStore extends SimpleJooqMigration {
+public class V0_1_1019__CreateTableStore extends SimpleJooqMigration {
 
     private static final String TABLE_NAME = "store";
 

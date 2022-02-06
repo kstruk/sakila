@@ -17,6 +17,10 @@ public class Properties {
         return (String) values.get("app.version");
     }
 
+    public String getDataBaseName() {
+        return (String) values.get("database.name");
+    }
+
     public String getDataBaseVendor() {
         return (String) values.get("database.vendor");
     }
@@ -35,6 +39,10 @@ public class Properties {
 
     public String getDataBasePass() {
         return (String) values.get("database.pass");
+    }
+
+    public boolean getDataBaseMigrate() {
+        return Boolean.parseBoolean((String) values.get("database.migrate"));
     }
 
     public Map<String, Object> toMap() {

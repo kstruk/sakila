@@ -17,3 +17,6 @@ V0_1_1014__CreateTableLanguage
 V0_1_1015__CreateTablePayment
 V0_1_1016__CreateTableRating
 V0_1_1017__InsertDataRating
+V0_1_1018__CreateTableRental
+V0_1_1019__CreateTableStore
+V0_1_1020__CreateTableStaff

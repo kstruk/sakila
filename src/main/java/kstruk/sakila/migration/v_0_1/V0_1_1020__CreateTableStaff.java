@@ -12,7 +12,7 @@ import static org.jooq.impl.SQLDataType.LOCALDATETIME;
 import static org.jooq.impl.SQLDataType.VARCHAR;
 
 @Slf4j
-public class V0_1_1020_CreateTableStaff extends SimpleJooqMigration {
+public class V0_1_1020__CreateTableStaff extends SimpleJooqMigration {
 
     private static final String TABLE_NAME = "staff";
 
